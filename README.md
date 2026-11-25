@@ -41,10 +41,18 @@ Each ABC file also includes the model files it requires, so they can be run indi
 
 Small reference tables can be used for testing. The final treatment analysis used 5000 evaluable reference particles with the closest 50 particles retained. Of course these numbers can be increased for deeper accuracy of the ABC estimate.
 
-## Notes
+## Notes and Requirements
 
-ABC distances are based only on longitudinal blood measurements (sampled ecDNA and tumour-derived chromosomal DNA). Tumour size, mean ecDNA copy number, and other latent tumour states are not included in the ABC distance.
+- ABC distances are based only on longitudinal blood measurements (sampled ecDNA and tumour-derived chromosomal DNA). Tumour size, mean ecDNA copy number, and other latent tumour states are not included in the ABC distance.
 
-The sequencing model is an adaptation of a finite-molecular-information observation model and uses Binomial sampling of realised molecular depth followed by Multinomial sampling of ecDNA/chromosomal composition.
+- The sequencing model is an adaptation of a finite-molecular-information observation model and uses Binomial sampling of realised molecular depth followed by Multinomial sampling of ecDNA/chromosomal composition.
 
-The Figures in the report are produces from the functions in this repository. The actual codes for reproducing the visualisations are not attached.
+- The Figures in the report are produced from the functions in this repository. The actual codes for reproducing the visualisations are not attached.
+
+- The only external package required is Distributions. It can be installed using:
+
+  `using Pkg`
+  
+  `Pkg.add("Distributions")`.
+
+  Random, Statistics and Serialization are part of the Julia standard library.
